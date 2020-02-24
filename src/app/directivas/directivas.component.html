@@ -1,1 +1,22 @@
-<p>directivas works!</p>
+<h1>Directivas en Angular</h1>
+<!-- La directiva ngIf permite poner/quitar elementos del DOM según estados de propiedades o expresiones lógicas -->
+<label>Escribe angular para ver el logo de Angular</label>
+<input type="text" [(ngModel)]="logo" />
+<div *ngIf="logo=='angular'">
+  <img src="https://angular.io/assets/images/logos/angular/angular.png">
+</div>
+<div *ngIf="logo!='angular'">
+  <img src="https://www.logaster.com.es/static/images/not_allowed.png">
+</div>
+
+
+<!-- La directiva ngFor permite generar contenido de forma dinámica según una iteración de un array -->
+<h3>Receta de tortilla</h3>
+<ul>
+  <li *ngFor="let ingrediente of ingredientes">
+    {{ingrediente}}
+  </li>
+</ul>
+<label>Nuevo ingrediente</label>
+<input type="text" [(ngModel)]="ingrediente" />
+<button (click)="agregarIngrediente()">Agregar ingrediente</button>
