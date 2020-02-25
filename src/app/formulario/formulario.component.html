@@ -1,0 +1,51 @@
+<div class="container">
+    <h1>Agregar usuario</h1>
+    <form #f="ngForm">
+      <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" class="form-control" name="nombre" [(ngModel)]="user.nombre" required>
+      </div>
+      <div class="form-group">
+        <label>Edad</label>
+        <input type="number" class="form-control" name="edad" [(ngModel)]="user.edad">
+      </div>
+      <div class="form-group">
+        <label>Sexo</label>
+      <div class="form-check" *ngFor="let genero of generos">
+        <input class="form-check-input" type="radio" name="genero" [(ngModel)]="user.genero" [value]="genero.value">
+        <label class="form-check-label">
+          {{genero.display}}
+        </label>
+      </div>
+      </div>
+      <div class="form-group">
+        <label>Rol</label>
+        <select name="role" class="form-control" [(ngModel)]="user.rol">
+          <option *ngFor="let rol of roles" [value]="rol.value">{{rol.display}}</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="activo" [(ngModel)]="user.activo">
+            Es Activo
+          </label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Aficiones</label>
+        <select multiple name="aficiones" class="form-control" [(ngModel)]="user.aficiones">
+          <option *ngFor="let aficion of aficiones" [value]="aficion.value">{{aficion.display}}</option>
+        </select>
+      </div>
+      
+      <button type="submit" (click)="save(f.value, f.valid)" class="btn btn-primary">Aceptar</button>
+    </form>
+    <div style="margin-top: 20px" *ngIf="f">
+      <div>Detalles del formulario:-</div>
+      <pre>Es válido?: <br>{{f.valid | json}}</pre>
+      <pre>Se ha aceptado?: <br>{{f.submitted | json}}</pre>
+      <pre>Valores introducidos: <br>{{f.value | json}}</pre>
+    </div>
+  </div>
