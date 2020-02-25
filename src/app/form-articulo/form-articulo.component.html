@@ -11,7 +11,7 @@
         </div>            
         <div class="form-group">
             <label>Familia</label>
-            <select [(ngModel)]="articulo.familia" class="form-control">
+            <select name="familia" [(ngModel)]="articulo.familia" class="form-control">
             <option *ngFor="let familia of familias" [value]="familia.value">{{familia.display}}</option>
         </select>
         </div>
