@@ -14,6 +14,9 @@ export class DirectivasComponent implements OnInit {
     'Aceite',
     'Sal'
   ];
+  imagen: string;
+  imagenes: string[] =[];
+
 
   constructor() { }
 
@@ -23,4 +26,12 @@ export class DirectivasComponent implements OnInit {
   agregarIngrediente() {
     this.ingredientes.push(this.ingrediente);
   }
+  
+  agregarImagen(){
+    this.imagenes.push(this.imagen);
+  }
+  borrarImagenes(){
+    
+  }
 }
+

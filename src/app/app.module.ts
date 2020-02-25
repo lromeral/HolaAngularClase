@@ -4,7 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HolaAngularComponent } from './hola-angular/hola-angular.component';
 import { FormsModule } from '@angular/forms';
-import { DirectivasComponent } from './directivas/directivas.component'
+import { DirectivasComponent } from './directivas/directivas.component';
+
 
 
 @NgModule({

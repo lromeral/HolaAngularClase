@@ -20,3 +20,14 @@
 <label>Nuevo ingrediente</label>
 <input type="text" [(ngModel)]="ingrediente" />
 <button (click)="agregarIngrediente()">Agregar ingrediente</button>
+
+<hr>
+
+<div *ngFor="let imagen of imagenes">
+    <img [src]="imagen" class="galeria">
+    <br/>
+</div>
+Imagen: <input type="text" [(ngModel)]="imagen" />
+<button (click)="agregarImagen()">Agregar Imagen</button>
+<button (click)="borrarImagenes()">Borrar Imagenes</button>
+
